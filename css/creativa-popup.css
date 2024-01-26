@@ -1,0 +1,441 @@
+/* ----------------------------
+----------- POPUP ------------
+---------------------------- */
+
+.ct-popup-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(6.9px) brightness(0.5);
+    opacity: 0;
+}
+
+.ct-popup-container {
+    position: relative;
+}
+
+.ct-popup-box {
+    opacity: 0;
+    width: fit-content;
+    width: -moz-fit-content;
+    max-height: 90%;
+    background: #fff;
+    background-color: #222;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: sans-serif;
+    transition-property: width;
+    transition-duration: 3s;
+}
+
+.ct-popup-close-icon {
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    border-radius: 50%;
+    background-color: #ff4d4d;
+    transition: background 0.15s;
+}
+
+.ct-popup-close-icon:hover {
+    cursor: pointer;
+    background-color: #e60000;
+}
+
+.ct-popup-close-icon:active {
+    background-color: #cc0000;
+}
+
+.ct-popup-close-icon-line-first,
+.ct-popup-close-icon-line-second {
+    height: 10px;
+    width: 2px;
+    background-color: white;
+}
+
+.ct-popup-close-icon-line-first {
+    margin-left: 8px;
+    margin-top: 4px;
+    transform: rotate(45deg);
+    Z-index: 1;
+}
+
+.ct-popup-close-icon-line-second {
+    transform: rotate(90deg);
+    Z-index: 2;
+}
+
+.ct-popup-show {
+    opacity: 1;
+}
+
+.ct-popup-image,
+.ct-popup-icon {
+    display: block;
+    background-size: cover;
+    background-position: center center;
+}
+
+.ct-popup-other-content {
+    overflow: auto;
+}
+
+.ct-popup-image {
+    width: calc(100% + 4px);
+    height: 120px;
+    position: relative;
+    left: -2px;
+    top: -2px;
+    box-shadow: 0px 4px 3px -3px #aaa;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.ct-popup-content {
+    padding: 19px 19px;
+    overflow: auto;
+}
+
+.ct-popup-icon {
+    margin: auto;
+    margin-bottom: 8px;
+    width: 28px;
+    height: 28px;
+}
+
+.ct-popup-title,
+.ct-popup-text {
+    margin: 0;
+    text-align: center;
+}
+
+.ct-popup-title {
+    font-weight: 600 !important;
+    font-size: 19px !important;
+    color: #cccccc !important;
+    margin-bottom: 3px !important;
+}
+
+.ct-popup-text {
+    text-transform: none !important;
+    font-size: 15px !important;
+    color: #aaaaaa !important;
+}
+
+.ct-popup-text h1,
+.ct-popup-text h2,
+.ct-popup-text h3,
+.ct-popup-text h4,
+.ct-popup-text h5,
+.ct-popup-text h6 {
+    color: #222;
+}
+
+.ct-popup-text b {
+    color: #222;
+    font-weight: 600;
+}
+
+/* ----------------------------
+-------- ANIMATIONS -----------
+---------------------------- */
+
+.fade-ct-popup-animation-open {
+    animation-name: fade-ct-popup-animation-open;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-ct-popup-animation-open {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-ct-popup-animation-close {
+    animation-name: fade-ct-popup-animation-close;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fade-ct-popup-animation-close {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.bubble-ct-popup-animation-open {
+    animation-name: bubble-ct-popup-animation-open;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bubble-ct-popup-animation-open {
+    0% {
+        transform: translate(-50%, -50%) scale(0, 0);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1, 1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+}
+
+.bubble-ct-popup-animation-close {
+    animation-name: bubble-ct-popup-animation-close;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bubble-ct-popup-animation-close {
+    0% {
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1, 1.1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0, 0);
+    }
+}
+
+.card-right-ct-popup-animation-open {
+    animation-name: card-right-ct-popup-animation-open;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-right-ct-popup-animation-open {
+    from {
+        opacity: 0;
+        left: calc(50% + 200px);
+        transform: translate(-50%, -50%) scale(0.8, 0.8);
+    }
+    to {
+        opacity: 1;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+}
+
+.card-right-ct-popup-animation-close {
+    animation-name: card-right-ct-popup-animation-close;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-right-ct-popup-animation-close {
+    from {
+        opacity: 1;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+    to {
+        opacity: 0;
+        left: calc(50% + 200px);
+        transform: translate(-50%, -50%) scale(0.8, 0.8);
+    }
+}
+
+.card-left-ct-popup-animation-open {
+    animation-name: card-left-ct-popup-animation-open;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-left-ct-popup-animation-open {
+    from {
+        opacity: 0;
+        left: calc(50% - 200px);
+        transform: translate(-50%, -50%) scale(0.8, 0.8);
+    }
+    to {
+        opacity: 1;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+}
+
+.card-left-ct-popup-animation-close {
+    animation-name: card-left-ct-popup-animation-close;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-left-ct-popup-animation-close {
+    from {
+        opacity: 1;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1, 1);
+    }
+    to {
+        opacity: 0;
+        left: calc(50% - 200px);
+        transform: translate(-50%, -50%) scale(0.8, 0.8);
+    }
+}
+
+.newspaper-ct-popup-animation-open {
+    animation-name: newspaper-ct-popup-animation-open;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes newspaper-ct-popup-animation-open {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0) rotate(500deg);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+}
+
+.newspaper-ct-popup-animation-close {
+    animation-name: newspaper-ct-popup-animation-close;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes newspaper-ct-popup-animation-close {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    }
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0) rotate(500deg);
+    }
+}
+
+.unfold-ct-popup-animation-open {
+    animation-name: unfold-ct-popup-animation-open;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes unfold-ct-popup-animation-open {
+    from {
+        opacity: 0;
+        transform-style: preserve-3d;
+        transform: translate(-50%, -50%) rotateY(-60deg);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+}
+
+.unfold-ct-popup-animation-close {
+    animation-name: unfold-ct-popup-animation-close;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes unfold-ct-popup-animation-close {
+    from {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotateY(0deg);
+    }
+    to {
+        opacity: 0;
+        transform-style: preserve-3d;
+        transform: translate(-50%, -50%) rotateY(-60deg);
+    }
+}
+
+.card-bottom-ct-popup-animation-open {
+    animation-name: card-bottom-ct-popup-animation-open;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-bottom-ct-popup-animation-open {
+    from {
+        opacity: 0;
+        margin-top: 20px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.card-bottom-ct-popup-animation-close {
+    animation-name: card-bottom-ct-popup-animation-close;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-bottom-ct-popup-animation-close {
+    from {
+        opacity: 1;
+        margin-top: 0px;
+    }
+    to {
+        opacity: 0;
+        margin-top: 20px;
+    }
+}
+
+.card-top-ct-popup-animation-open {
+    animation-name: card-top-ct-popup-animation-open;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-top-ct-popup-animation-open {
+    from {
+        opacity: 0;
+        margin-top: -20px;
+    }
+    to {
+        opacity: 1;
+        margin-top: 0;
+    }
+}
+
+.card-top-ct-popup-animation-close {
+    animation-name: card-top-ct-popup-animation-close;
+    animation-duration: 0.15s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-top-ct-popup-animation-close {
+    from {
+        opacity: 1;
+        margin-top: 0px;
+    }
+    to {
+        opacity: 0;
+        margin-top: -20px;
+    }
+}
+
+/* ----------------------------
+---------- MOBILE -------------
+---------------------------- */
+
+@media (max-width: 500px) {
+    .ct-popup-box {
+        width: 90%;
+    }
+    .ct-box-centered {
+        width: 90% !important;
+    }
+}
